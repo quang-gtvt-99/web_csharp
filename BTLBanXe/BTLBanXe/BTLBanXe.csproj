@@ -1,0 +1,703 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F46785BA-11B4-43E7-A490-9446DC4A6E73}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BTLBanXe</RootNamespace>
+    <AssemblyName>BTLBanXe</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44399</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualStudio.DebuggerVisualizers, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Alert.js" />
+    <Content Include="Content\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\css\font-awesome.min.css" />
+    <Content Include="Content\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Content\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\css\basictable.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\codinh.css" />
+    <Content Include="Content\css\font-awesome.css" />
+    <Content Include="Content\css\icon-font.min.css" />
+    <Content Include="Content\css\jqcandlestick.css" />
+    <Content Include="Content\css\jquery-ui.css" />
+    <Content Include="Content\css\lightbox.css" />
+    <Content Include="Content\css\monthly.css" />
+    <Content Include="Content\css\morris.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\table-style.css" />
+    <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\jquery-2.1.4.min.js" />
+    <Content Include="Content\js\jquery-3.3.1.min.js" />
+    <Content Include="Content\js\jquery-ui.js" />
+    <Content Include="Content\js\jquery.basictable.min.js" />
+    <Content Include="Content\js\jquery.jqcandlestick.min.js" />
+    <Content Include="Content\js\jquery.nicescroll.js" />
+    <Content Include="Content\js\lightbox-plus-jquery.min.js" />
+    <Content Include="Content\js\monthly.js" />
+    <Content Include="Content\js\morris.js" />
+    <Content Include="Content\js\raphael-min.js" />
+    <Content Include="Content\js\scripts.js" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\themes\css\bootstrappage.css" />
+    <Content Include="Content\themes\css\flexslider.css" />
+    <Content Include="Content\themes\css\font-awesome.min.css" />
+    <Content Include="Content\themes\css\font-awesome.min2.css" />
+    <Content Include="Content\themes\css\font-awesome.min3.css" />
+    <Content Include="Content\themes\css\jquery-ui.min.css" />
+    <Content Include="Content\themes\css\jquery.fancybox.css" />
+    <Content Include="Content\themes\css\main.css" />
+    <Content Include="Content\themes\images\arrow-p.png" />
+    <Content Include="Content\themes\images\arrow-pleft.png" />
+    <Content Include="Content\themes\images\asus-laptop-logo.png" />
+    <Content Include="Content\themes\images\baner.jpg" />
+    <Content Include="Content\themes\images\bg.png" />
+    <Content Include="Content\themes\images\carousel\banner-1.jpg" />
+    <Content Include="Content\themes\images\carousel\banner-2.jpg" />
+    <Content Include="Content\themes\images\carousel\slider_1.jpg" />
+    <Content Include="Content\themes\images\carousel\slider_2.jpg" />
+    <Content Include="Content\themes\images\carousel\slider_3.jpg" />
+    <Content Include="Content\themes\images\carousel\slider_4.png" />
+    <Content Include="Content\themes\images\carousel\slider_5.png" />
+    <Content Include="Content\themes\images\carousel\slider_6.png" />
+    <Content Include="Content\themes\images\carousel\slider_7.png" />
+    <Content Include="Content\themes\images\Car\honda.jpg" />
+    <Content Include="Content\themes\images\Car\xeaudi1.jpg" />
+    <Content Include="Content\themes\images\Car\xecam.jpg" />
+    <Content Include="Content\themes\images\Car\xemec1.jpg" />
+    <Content Include="Content\themes\images\Car\xemec2.jpg" />
+    <Content Include="Content\themes\images\Car\xesh.jpg" />
+    <Content Include="Content\themes\images\Car\xetoy.jpg" />
+    <Content Include="Content\themes\images\Car\xevin.png" />
+    <Content Include="Content\themes\images\clients\1.png" />
+    <Content Include="Content\themes\images\clients\14.png" />
+    <Content Include="Content\themes\images\clients\2.png" />
+    <Content Include="Content\themes\images\clients\3.png" />
+    <Content Include="Content\themes\images\clients\35.png" />
+    <Content Include="Content\themes\images\clients\4.png" />
+    <Content Include="Content\themes\images\cloth\anh1.png" />
+    <Content Include="Content\themes\images\cloth\anh10.png" />
+    <Content Include="Content\themes\images\cloth\anh11.png" />
+    <Content Include="Content\themes\images\cloth\anh12.png" />
+    <Content Include="Content\themes\images\cloth\anh13.png" />
+    <Content Include="Content\themes\images\cloth\anh14.png" />
+    <Content Include="Content\themes\images\cloth\anh15.png" />
+    <Content Include="Content\themes\images\cloth\anh16.png" />
+    <Content Include="Content\themes\images\cloth\anh17.png" />
+    <Content Include="Content\themes\images\cloth\anh18.png" />
+    <Content Include="Content\themes\images\cloth\anh19.png" />
+    <Content Include="Content\themes\images\cloth\anh2.png" />
+    <Content Include="Content\themes\images\cloth\anh20.png" />
+    <Content Include="Content\themes\images\cloth\anh21.png" />
+    <Content Include="Content\themes\images\cloth\anh22.png" />
+    <Content Include="Content\themes\images\cloth\anh23.png" />
+    <Content Include="Content\themes\images\cloth\anh24.png" />
+    <Content Include="Content\themes\images\cloth\anh3.png" />
+    <Content Include="Content\themes\images\cloth\anh4.png" />
+    <Content Include="Content\themes\images\cloth\anh5.png" />
+    <Content Include="Content\themes\images\cloth\anh6.png" />
+    <Content Include="Content\themes\images\cloth\anh7.png" />
+    <Content Include="Content\themes\images\cloth\anh8.png" />
+    <Content Include="Content\themes\images\cloth\anh9.png" />
+    <Content Include="Content\themes\images\cloth\laptop1.png" />
+    <Content Include="Content\themes\images\cloth\laptop2.jpg" />
+    <Content Include="Content\themes\images\cloth\laptop3.png" />
+    <Content Include="Content\themes\images\cloth\laptop4.png" />
+    <Content Include="Content\themes\images\feature_img_1.png" />
+    <Content Include="Content\themes\images\feature_img_2.png" />
+    <Content Include="Content\themes\images\feature_img_3.png" />
+    <Content Include="Content\themes\images\gotop.png" />
+    <Content Include="Content\themes\images\ladies\1.jpg" />
+    <Content Include="Content\themes\images\ladies\2.jpg" />
+    <Content Include="Content\themes\images\ladies\3.jpg" />
+    <Content Include="Content\themes\images\ladies\4.jpg" />
+    <Content Include="Content\themes\images\ladies\5.jpg" />
+    <Content Include="Content\themes\images\ladies\6.jpg" />
+    <Content Include="Content\themes\images\ladies\7.jpg" />
+    <Content Include="Content\themes\images\ladies\8.jpg" />
+    <Content Include="Content\themes\images\ladies\9.jpg" />
+    <Content Include="Content\themes\images\line_bar.png" />
+    <Content Include="Content\themes\images\logo.png" />
+    <Content Include="Content\themes\images\m1.png" />
+    <Content Include="Content\themes\images\m2.png" />
+    <Content Include="Content\themes\images\m3.png" />
+    <Content Include="Content\themes\images\m4.png" />
+    <Content Include="Content\themes\images\m5.png" />
+    <Content Include="Content\themes\images\m6.png" />
+    <Content Include="Content\themes\images\pageBanner.png" />
+    <Content Include="Content\themes\images\project_img2.jpg" />
+    <Content Include="Content\themes\images\project_img3.jpg" />
+    <Content Include="Content\themes\images\project_img4.jpg" />
+    <Content Include="Content\themes\images\project_img6.jpg" />
+    <Content Include="Content\themes\images\slides\liam-moore-portfolio-john-lewis-9.jpg" />
+    <Content Include="Content\themes\js\common.js" />
+    <Content Include="Content\themes\js\css\style.css" />
+    <Content Include="Content\themes\js\jquery-1.7.2.min.js" />
+    <Content Include="Content\themes\js\jquery-ui.min.js" />
+    <Content Include="Content\themes\js\jquery.fancybox.js" />
+    <Content Include="Content\themes\js\jquery.flexslider-min.js" />
+    <Content Include="Content\themes\js\jquery.scrolltotop.js" />
+    <Content Include="Content\themes\js\superfish.js" />
+    <Content Include="Global.asax" />
+    <Content Include="images\Car\honda.jpg" />
+    <Content Include="images\Car\xeaudi1.jpg" />
+    <Content Include="images\Car\xecam.jpg" />
+    <Content Include="images\Car\xemec1.jpg" />
+    <Content Include="images\Car\xemec2.jpg" />
+    <Content Include="images\Car\xesh.jpg" />
+    <Content Include="images\Car\xetoy.jpg" />
+    <Content Include="images\Car\xevin.png" />
+    <Content Include="images\Ford\audi-q5-1.jpg" />
+    <Content Include="images\Ford\audi-q5-2.jpg" />
+    <Content Include="images\Ford\audi-q5-3.jpg" />
+    <Content Include="images\Ford\audi-q5-4.jpg" />
+    <Content Include="images\Ford\audi-q7-1.jpg" />
+    <Content Include="images\Ford\audi-q7-2.jpg" />
+    <Content Include="images\Ford\audi-q7-3.jpg" />
+    <Content Include="images\Ford\audi-q7-4.jpg" />
+    <Content Include="images\Ford\audi-q8-1.jpg" />
+    <Content Include="images\Ford\audi-q8-2.jpg" />
+    <Content Include="images\Ford\audi-q8-3.jpg" />
+    <Content Include="images\Ford\audi-q8-4.jpg" />
+    <Content Include="images\Ford\bmw-x7-1.jpg" />
+    <Content Include="images\Ford\bmw-x7-2.jpg" />
+    <Content Include="images\Ford\bmw-x7-3.jpg" />
+    <Content Include="images\Ford\bmw-x7-4.jpg" />
+    <Content Include="images\Ford\bmw-x7-wh1.jpg" />
+    <Content Include="images\Ford\bmw-x7-wh2.jpg" />
+    <Content Include="images\Ford\bmw-x7-wh3.jpg" />
+    <Content Include="images\Ford\bmw-x7-wh4.jpg" />
+    <Content Include="images\Ford\cadi-esv-bl1.jpg" />
+    <Content Include="images\Ford\cadi-esv-bl2.jpg" />
+    <Content Include="images\Ford\cadi-esv-bl3.jpg" />
+    <Content Include="images\Ford\cadi-esv-bl4.jpg" />
+    <Content Include="images\Ford\cadi-esv-wh1.jpg" />
+    <Content Include="images\Ford\cadi-esv-wh2.jpg" />
+    <Content Include="images\Ford\cadi-esv-wh3.jpg" />
+    <Content Include="images\Ford\cadi-esv-wh4.jpg" />
+    <Content Include="images\Ford\ford-f150-1.jpg" />
+    <Content Include="images\Ford\ford-f150-2.jpg" />
+    <Content Include="images\Ford\ford-f150-3.jpg" />
+    <Content Include="images\Ford\ford-f150-4.jpg" />
+    <Content Include="images\Ford\ford-f150-raptor1.jpg" />
+    <Content Include="images\Ford\ford-f150-raptor2.jpg" />
+    <Content Include="images\Ford\ford-f150-raptor3.jpg" />
+    <Content Include="images\Ford\ford-f150-raptor4.jpg" />
+    <Content Include="images\Ford\ford-harley-1.jpg" />
+    <Content Include="images\Ford\ford-harley-2.jpg" />
+    <Content Include="images\Ford\ford-harley-4.jpg" />
+    <Content Include="images\Ford\ford-harly-3.jpg" />
+    <Content Include="images\Ford\honda-crv-1.jpg" />
+    <Content Include="images\Ford\honda-crv-2.jpg" />
+    <Content Include="images\Ford\honda-crv-3.jpg" />
+    <Content Include="images\Ford\honda-crv-4.jpg" />
+    <Content Include="images\Ford\honda-cty-1.jpg" />
+    <Content Include="images\Ford\honda-cty-2.jpg" />
+    <Content Include="images\Ford\honda-cty-3.jpg" />
+    <Content Include="images\Ford\honda-cty-4.jpg" />
+    <Content Include="images\Ford\honda-cub-1.jpg" />
+    <Content Include="images\Ford\honda-cub-2.jpg" />
+    <Content Include="images\Ford\honda-fu-1.jpg" />
+    <Content Include="images\Ford\honda-fu-2.jpg" />
+    <Content Include="images\Ford\honda-hrv-1.jpg" />
+    <Content Include="images\Ford\honda-hrv-2.jpg" />
+    <Content Include="images\Ford\honda-hrv-3.jpg" />
+    <Content Include="images\Ford\honda-hrv-4.jpg" />
+    <Content Include="images\Ford\honda-lead-1.jpg" />
+    <Content Include="images\Ford\honda-lead-2.jpg" />
+    <Content Include="images\Ford\honda-sh-1.jpg" />
+    <Content Include="images\Ford\honda-sh-2.jpg" />
+    <Content Include="images\Ford\honda-sh300-1.jpg" />
+    <Content Include="images\Ford\honda-sh300-2.jpg" />
+    <Content Include="images\Ford\honda-vi-1.jpg" />
+    <Content Include="images\Ford\honda-vi-2.jpg" />
+    <Content Include="images\Ford\honda-wave-1.jpg" />
+    <Content Include="images\Ford\honda-wave-2.jpg" />
+    <Content Include="images\Ford\lam-aven-1.jpg" />
+    <Content Include="images\Ford\lam-aven-2.jpg" />
+    <Content Include="images\Ford\lam-aven-3.jpg" />
+    <Content Include="images\Ford\lam-aven-4.jpg" />
+    <Content Include="images\Ford\lam-hur-1.jpg" />
+    <Content Include="images\Ford\lam-hur-2.jpg" />
+    <Content Include="images\Ford\lam-hur-3.jpg" />
+    <Content Include="images\Ford\lam-hur-4.jpg" />
+    <Content Include="images\Ford\lam-urus-1.jpg" />
+    <Content Include="images\Ford\lam-urus-2.jpg" />
+    <Content Include="images\Ford\lam-urus-3.jpg" />
+    <Content Include="images\Ford\lam-urus-4.jpg" />
+    <Content Include="images\Ford\lexus-lx570-1.jpg" />
+    <Content Include="images\Ford\lexus-lx570-2.jpg" />
+    <Content Include="images\Ford\lexus-lx570-3.jpg" />
+    <Content Include="images\Ford\lexus-lx570-4.jpg" />
+    <Content Include="images\Ford\lexus-lx570-ss1.jpg" />
+    <Content Include="images\Ford\lexus-lx570-ss2.jpg" />
+    <Content Include="images\Ford\lexus-lx570-ss3.jpg" />
+    <Content Include="images\Ford\lexus-lx570-ss4.jpg" />
+    <Content Include="images\Ford\lexus-rx350-1.jpg" />
+    <Content Include="images\Ford\lexus-rx350-2.jpg" />
+    <Content Include="images\Ford\lexus-rx350-3.jpg" />
+    <Content Include="images\Ford\lexus-rx350-4.jpg" />
+    <Content Include="images\Ford\maz-3-1.jpg" />
+    <Content Include="images\Ford\maz-3-2.jpg" />
+    <Content Include="images\Ford\maz-6-1.jpg" />
+    <Content Include="images\Ford\maz-6-2.jpg" />
+    <Content Include="images\Ford\mec-c200-1.jpg" />
+    <Content Include="images\Ford\mec-c200-2.jpg" />
+    <Content Include="images\Ford\mec-c200-3.jpg" />
+    <Content Include="images\Ford\mec-c200-4.jpg" />
+    <Content Include="images\Ford\mec-c300-1.jpg" />
+    <Content Include="images\Ford\mec-c300-2.jpg" />
+    <Content Include="images\Ford\mec-c300-3.jpg" />
+    <Content Include="images\Ford\mec-c300-4.jpg" />
+    <Content Include="images\Ford\mec-e300-1.jpg" />
+    <Content Include="images\Ford\mec-e300-2.jpg" />
+    <Content Include="images\Ford\mec-e300-3.jpg" />
+    <Content Include="images\Ford\mec-e300-4.jpg" />
+    <Content Include="images\Ford\mec-gla-1.jpg" />
+    <Content Include="images\Ford\mec-gla-2.jpg" />
+    <Content Include="images\Ford\mec-gla-3.jpg" />
+    <Content Include="images\Ford\mec-gls350-1.jpg" />
+    <Content Include="images\Ford\mec-gls350-2.jpg" />
+    <Content Include="images\Ford\mec-s400-1.jpg" />
+    <Content Include="images\Ford\mec-s400-2.jpg" />
+    <Content Include="images\Ford\mec-s400-3.jpg" />
+    <Content Include="images\Ford\mec-s400-4.jpg" />
+    <Content Include="images\Ford\ro-2015-1.jpg" />
+    <Content Include="images\Ford\ro-2015-2.jpg" />
+    <Content Include="images\Ford\ro-2015-3.jpg" />
+    <Content Include="images\Ford\ro-2015-4.jpg" />
+    <Content Include="images\Ford\ro-2019-1.jpg" />
+    <Content Include="images\Ford\ro-2019-2.jpg" />
+    <Content Include="images\Ford\ro-2019-3.jpg" />
+    <Content Include="images\Ford\ro-2019-4.jpg" />
+    <Content Include="images\Ford\ro-2020-1.jpg" />
+    <Content Include="images\Ford\ro-2020-2.jpg" />
+    <Content Include="images\Ford\ro-2020-3.jpg" />
+    <Content Include="images\Ford\ro-2020-4.jpg" />
+    <Content Include="images\Ford\toy-cam-1.jpg" />
+    <Content Include="images\Ford\toy-cam-2.jpg" />
+    <Content Include="images\Ford\toy-cam-3.jpg" />
+    <Content Include="images\Ford\toy-cruiser-1.jpg" />
+    <Content Include="images\Ford\toy-cruiser-2.jpg" />
+    <Content Include="images\Ford\toy-cruiser-3.jpg" />
+    <Content Include="images\Ford\toy-cruiser-4.jpg" />
+    <Content Include="images\Ford\vin-fadil-1.jpg" />
+    <Content Include="images\Ford\vin-fadil-2.jpg" />
+    <Content Include="images\Ford\vin-fadil-3.jpg" />
+    <Content Include="images\Ford\vin-fadil-4.jpg" />
+    <Content Include="images\Ford\vin-lux-1.jpg" />
+    <Content Include="images\Ford\vin-lux-2.jpg" />
+    <Content Include="images\Ford\vin-lux-3.jpg" />
+    <Content Include="images\Ford\vin-lux-4.jpg" />
+    <Content Include="images\search.png" />
+    <Content Include="Login_v19\css\main.css" />
+    <Content Include="Login_v19\css\util.css" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Login_v19\fonts\JosefinSans\OFL.txt" />
+    <Content Include="Login_v19\fonts\Linearicons-Free-v1.0.0\icon-font.min.css" />
+    <Content Include="Login_v19\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.svg" />
+    <Content Include="Login_v19\images\bg-01.jpg" />
+    <Content Include="Login_v19\images\icons\favicon.ico" />
+    <Content Include="Login_v19\images\icons\map-marker.png" />
+    <Content Include="Login_v19\images\img-01.png" />
+    <Content Include="Login_v19\index.html" />
+    <Content Include="Login_v19\js\main.js" />
+    <Content Include="Login_v19\js\map-custom.js" />
+    <Content Include="Login_v19\vendor\animate\animate.css" />
+    <Content Include="Login_v19\vendor\animsition\css\animsition.css" />
+    <Content Include="Login_v19\vendor\animsition\css\animsition.min.css" />
+    <Content Include="Login_v19\vendor\animsition\js\animsition.js" />
+    <Content Include="Login_v19\vendor\animsition\js\animsition.min.js" />
+    <Content Include="Login_v19\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Login_v19\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Login_v19\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Login_v19\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Login_v19\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Login_v19\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Login_v19\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Login_v19\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Login_v19\vendor\bootstrap\js\popper.js" />
+    <Content Include="Login_v19\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Login_v19\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Login_v19\vendor\countdowntime\countdowntime.js" />
+    <Content Include="Login_v19\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Login_v19\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Login_v19\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="Login_v19\vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="Login_v19\vendor\daterangepicker\moment.js" />
+    <Content Include="Login_v19\vendor\daterangepicker\moment.min.js" />
+    <Content Include="Login_v19\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Login_v19\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Login_v19\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="Login_v19\vendor\select2\select2.css" />
+    <Content Include="Login_v19\vendor\select2\select2.js" />
+    <Content Include="Login_v19\vendor\select2\select2.min.css" />
+    <Content Include="Login_v19\vendor\select2\select2.min.js" />
+    <Content Include="Models\WebBanXeEntities2.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WebBanXeEntities2.edmx</DependentUpon>
+      <LastGenOutput>WebBanXeEntities2.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\WebBanXeEntities2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WebBanXeEntities2.edmx</DependentUpon>
+      <LastGenOutput>WebBanXeEntities2.cs</LastGenOutput>
+    </Content>
+    <Content Include="Mota\mota1.html" />
+    <Content Include="Mota\mota2.html" />
+    <Content Include="Mota\mota3.html" />
+    <Content Include="Mota\mota4.html" />
+    <Content Include="Mota\mota5.html" />
+    <None Include="Scripts\jquery-1.8.0.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.0.js" />
+    <Content Include="Scripts\jquery-1.8.0.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EditController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="helperSession.cs" />
+    <Compile Include="Models\adminmodel.cs" />
+    <Compile Include="Models\Login.cs">
+      <DependentUpon>WebBanXeEntities2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Metadata\Model1.cs" />
+    <Compile Include="Models\Metadata\Model2.cs" />
+    <Compile Include="Models\Metadata\tbKhachHang.cs" />
+    <Compile Include="Models\Metadata\tbSanPham.cs" />
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>WebBanXeEntities2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>WebBanXeEntities2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>WebBanXeEntities2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbAnhSP.cs">
+      <DependentUpon>WebBanXeEntities2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbDacDiem.cs">
+      <DependentUpon>WebBanXeEntities2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbDacTinh.cs">
+      <DependentUpon>WebBanXeEntities2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbHangSX.cs">
+      <DependentUpon>WebBanXeEntities2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbKhachHang.cs">
+      <DependentUpon>WebBanXeEntities2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbLoai.cs">
+      <DependentUpon>WebBanXeEntities2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbNuocSX.cs">
+      <DependentUpon>WebBanXeEntities2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbPhanKhuc.cs">
+      <DependentUpon>WebBanXeEntities2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbSanPham.cs">
+      <DependentUpon>WebBanXeEntities2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WebBanXeEntities2.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebBanXeEntities2.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WebBanXeEntities2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebBanXeEntities2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WebBanXeEntities2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebBanXeEntities2.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserDao.cs" />
+    <Compile Include="userSession.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Login_v19\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Login_v19\fonts\JosefinSans\JosefinSans-Bold.ttf" />
+    <Content Include="Login_v19\fonts\JosefinSans\JosefinSans-BoldItalic.ttf" />
+    <Content Include="Login_v19\fonts\JosefinSans\JosefinSans-Italic.ttf" />
+    <Content Include="Login_v19\fonts\JosefinSans\JosefinSans-Light.ttf" />
+    <Content Include="Login_v19\fonts\JosefinSans\JosefinSans-LightItalic.ttf" />
+    <Content Include="Login_v19\fonts\JosefinSans\JosefinSans-Regular.ttf" />
+    <Content Include="Login_v19\fonts\JosefinSans\JosefinSans-SemiBold.ttf" />
+    <Content Include="Login_v19\fonts\JosefinSans\JosefinSans-SemiBoldItalic.ttf" />
+    <Content Include="Login_v19\fonts\JosefinSans\JosefinSans-Thin.ttf" />
+    <Content Include="Login_v19\fonts\JosefinSans\JosefinSans-ThinItalic.ttf" />
+    <Content Include="Login_v19\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.eot" />
+    <Content Include="Login_v19\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.ttf" />
+    <Content Include="Login_v19\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff" />
+    <Content Include="Login_v19\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff2" />
+    <Content Include="Login_v19\fonts\OpenSans\OpenSans-Bold.ttf" />
+    <Content Include="Login_v19\fonts\OpenSans\OpenSans-BoldItalic.ttf" />
+    <Content Include="Login_v19\fonts\OpenSans\OpenSans-ExtraBold.ttf" />
+    <Content Include="Login_v19\fonts\OpenSans\OpenSans-ExtraBoldItalic.ttf" />
+    <Content Include="Login_v19\fonts\OpenSans\OpenSans-Italic.ttf" />
+    <Content Include="Login_v19\fonts\OpenSans\OpenSans-Light.ttf" />
+    <Content Include="Login_v19\fonts\OpenSans\OpenSans-LightItalic.ttf" />
+    <Content Include="Login_v19\fonts\OpenSans\OpenSans-Regular.otf" />
+    <Content Include="Login_v19\fonts\OpenSans\OpenSans-Regular.ttf" />
+    <Content Include="Login_v19\fonts\OpenSans\OpenSans-SemiBold.ttf" />
+    <Content Include="Login_v19\fonts\OpenSans\OpenSans-SemiBoldItalic.ttf" />
+    <Content Include="Login_v19\fonts\oswald\Oswald-Bold.ttf" />
+    <Content Include="Login_v19\fonts\oswald\Oswald-ExtraLight.ttf" />
+    <Content Include="Login_v19\fonts\oswald\Oswald-Light.ttf" />
+    <Content Include="Login_v19\fonts\oswald\Oswald-Medium.ttf" />
+    <Content Include="Login_v19\fonts\oswald\Oswald-Regular.ttf" />
+    <Content Include="Login_v19\fonts\oswald\Oswald-SemiBold.ttf" />
+    <Content Include="Login_v19\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Login_v19\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Login_v19\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Login_v19\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Login_v19\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Login_v19\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <EntityDeploy Include="Models\WebBanXeEntities2.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WebBanXeEntities2.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\WebBanXeEntities2.edmx.diagram">
+      <DependentUpon>WebBanXeEntities2.edmx</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <Content Include="Views\Shared\_layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\spNoiBatPartial.cshtml" />
+    <Content Include="Views\Home\spMoiVePartial.cshtml" />
+    <Content Include="Views\Home\spBanChayPartial.cshtml" />
+    <Content Include="Views\Home\XemChiTiet.cshtml" />
+    <Content Include="Views\Home\spLienQuanPartial.cshtml" />
+    <Content Include="Views\Home\spTheoHang.cshtml" />
+    <Content Include="Views\Home\spTheoHangPartial.cshtml" />
+    <Content Include="Views\Home\spOto.cshtml" />
+    <Content Include="Views\Home\AnhSP.cshtml" />
+    <Content Include="Views\Shared\_layout1.cshtml" />
+    <Content Include="Views\Home\spXemay.cshtml" />
+    <Content Include="Views\Home\spLoaiXeMay.cshtml" />
+    <Content Include="Views\Home\Mota1.cshtml" />
+    <Content Include="Views\Login\LoginView.cshtml" />
+    <Content Include="Views\Edit\Index.cshtml" />
+    <Content Include="Views\Edit\SanPham.cshtml" />
+    <Content Include="Views\Edit\danhmucsp.cshtml" />
+    <Content Include="Views\Home\insertCus.cshtml" />
+    <Content Include="Views\Shared\_layout2.cshtml" />
+    <Content Include="Views\Edit\KhachHang.cshtml" />
+    <Content Include="Views\Edit\danhmuckh.cshtml" />
+    <Content Include="Views\Home\TTins.cshtml" />
+    <Content Include="Views\Home\insertCusLT.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\Home\spTimKiem.cshtml" />
+    <Content Include="Views\Home\Search2.cshtml" />
+    <Content Include="Views\Home\spTimKiem2.cshtml" />
+    <Content Include="Views\Edit\Delete.cshtml" />
+    <Content Include="Views\Edit\DeleteKH.cshtml" />
+    <Content Include="Views\Edit\xoa.cshtml" />
+    <Content Include="Views\Edit\xoakh.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LoginLogin\LoginLogin.csproj">
+      <Project>{e5cb4062-56f3-4e3a-869d-c15e2400843d}</Project>
+      <Name>LoginLogin</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64385</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44399/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

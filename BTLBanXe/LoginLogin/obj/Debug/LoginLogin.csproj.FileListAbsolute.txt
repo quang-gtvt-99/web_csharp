@@ -1,0 +1,12 @@
+F:\Asp_Net\BTLBanXe\LoginLogin\bin\Debug\LoginLogin.dll.config
+F:\Asp_Net\BTLBanXe\LoginLogin\bin\Debug\LoginLogin.dll
+F:\Asp_Net\BTLBanXe\LoginLogin\bin\Debug\LoginLogin.pdb
+F:\Asp_Net\BTLBanXe\LoginLogin\bin\Debug\EntityFramework.dll
+F:\Asp_Net\BTLBanXe\LoginLogin\bin\Debug\EntityFramework.SqlServer.dll
+F:\Asp_Net\BTLBanXe\LoginLogin\bin\Debug\EntityFramework.xml
+F:\Asp_Net\BTLBanXe\LoginLogin\bin\Debug\EntityFramework.SqlServer.xml
+F:\Asp_Net\BTLBanXe\LoginLogin\obj\Debug\LoginLogin.csprojAssemblyReference.cache
+F:\Asp_Net\BTLBanXe\LoginLogin\obj\Debug\LoginLogin.csproj.CoreCompileInputs.cache
+F:\Asp_Net\BTLBanXe\LoginLogin\obj\Debug\LoginLogin.csproj.CopyComplete
+F:\Asp_Net\BTLBanXe\LoginLogin\obj\Debug\LoginLogin.dll
+F:\Asp_Net\BTLBanXe\LoginLogin\obj\Debug\LoginLogin.pdb

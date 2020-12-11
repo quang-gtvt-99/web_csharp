@@ -1,0 +1,14 @@
+﻿@model BTLBanXe.Models.tbSanPham
+
+
+<div>
+    <div style="color:blue;font-size:20px;margin:20px">
+        @Html.DisplayFor(n=>n.TenSP)
+    </div>
+    <div style="color:red;font-size:20px;margin:20px" >
+       <span style="font-size:15px">Giá Tiền : </span> @Html.DisplayFor(n=>n.GiaTien) <span> Triệu VND</span>
+    </div>
+    <div style="color:black;font-size:10px;margin:20px;font-style:oblique" >
+        <span>Ngày Đăng Kí : @ViewBag.daynow</span>
+    </div>
+</div>

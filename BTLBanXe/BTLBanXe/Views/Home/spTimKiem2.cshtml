@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "spTimKiem2";
+    Layout = "~/Views/Shared/_layout1.cshtml";
+}
+<table id="table">
+    <thead>
+        <tr>
+            <th>
+                Mã Khách Hàng
+            </th>
+            <th>Mã Sản Phẩm</th>
+            <th>Tên Khách Hàng</th>
+            <th>Ngày Đặt</th>
+            <th>Ngày Hẹn Trước</th>
+            <th>Số Điện Thoại</th>
+            <th style="text-align: center;">Email</th>
+            <th>Nhu Cầu</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var item in Model)
+            {
+                <tr class="info">
+                    <td>@item.MaKH</td>
+                    <td>@item.MaSP</td>
+                    <td>
+                        @item.TenKH
+                    </td>
+                    <td>@item.NgayMua</td>
+                    <td>@item.NgayHenLay</td>
+                    <td>@item.SDT</td>
+                    <td>@item.Email</td>
+                    <td>@item.NhuCau</td>
+                    <td style="text-align: center;">
+                       
+
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+

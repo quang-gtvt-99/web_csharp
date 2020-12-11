@@ -1,0 +1,88 @@
+﻿@using BTLBanXe.Models
+@model List<tbSanPham>
+@{
+    ViewBag.Title = "spTheoHang";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+
+
+<div class="row">
+    <div class="span12">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">@Html.ActionLink("Trang chủ", "Index", "Home")<span> > </span><span>@ViewBag.hangsx</span><span></span></li>
+        </ol>
+        <h4 class="title">
+
+
+            <span class="pull-left">
+                <span class="text"><span class="line"><a href="product_detail.html"><strong>Các sản phẩm của hãng @ViewBag.hangsx  </strong></a></span></span>
+            </span>
+
+
+        </h4>
+        <div id="myCarousel-3" class="">
+            <div class="carousel-inner">
+                <div class="active item">
+                    <ul class="thumbnails">
+                        <li style="float:left;width:1200px;height:900px;" class="span3">
+
+                            @{
+                                foreach (var item in Model)
+                                {
+                                    <div style="float:left;width:250px;height:300px;margin-left:20px" class="product-box">
+                                        <span class="sale_tag"></span>
+                                        <p><a href=@Url.Action("XemChiTiet","Home",new { @MaSP = item.MaSP,@HangSX = item.MaHangSX,@loaixe = item.MaLoai })><img style="width:250px;height:167px" src="@Url.Content("~/images/Ford/"+item.Image)" alt="" /></a></p>
+                                        <a href=@Url.Action("XemChiTiet","Home",new { @MaSP = item.MaSP ,@HangSX = item.MaHangSX}) class="title">@item.TenSP</a><br />
+                                        <a href=@Url.Action("XemChiTiet","Home",new { @MaSP = item.MaSP ,@HangSX = item.MaHangSX}) class="category"><p class="price">@item.GiaTien<span> Triệu VND</span></p></a>
+
+                                    </div>
+                                }
+                            }
+                        </li>
+
+
+                    </ul>
+                </div>
+                <!-- -->
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

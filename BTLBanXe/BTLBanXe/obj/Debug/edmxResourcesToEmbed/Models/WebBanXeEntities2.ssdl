@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuanLyBanXeModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tbAnhSP">
+    <Key>
+      <PropertyRef Name="MaSP" />
+      <PropertyRef Name="TenFileAnh" />
+    </Key>
+    <Property Name="MaSP" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenFileAnh" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="chitiet" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbDacDiem">
+    <Key>
+      <PropertyRef Name="MaDD" />
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaDD" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaSP" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ChiTietDD" Type="nvarchar" MaxLength="50" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbDacTinh">
+    <Key>
+      <PropertyRef Name="MaDacTinh" />
+    </Key>
+    <Property Name="MaDacTinh" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenDacTinh" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbHangSX">
+    <Key>
+      <PropertyRef Name="MaHangSX" />
+    </Key>
+    <Property Name="MaHangSX" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenHangSX" Type="nvarchar" MaxLength="50" />
+    <Property Name="NuocSX" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbKhachHang">
+    <Key>
+      <PropertyRef Name="MaKH" />
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaKH" Type="int" Nullable="false" />
+    <Property Name="MaSP" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenKH" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgayMua" Type="date" />
+    <Property Name="NgayHenLay" Type="date" />
+    <Property Name="SLmua" Type="int" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="SDT" Type="int" />
+    <Property Name="NhuCau" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbLoai">
+    <Key>
+      <PropertyRef Name="MaLoai" />
+    </Key>
+    <Property Name="MaLoai" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenLoai" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbNuocSX">
+    <Key>
+      <PropertyRef Name="MaNuocSX" />
+    </Key>
+    <Property Name="MaNuocSX" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenNuocSX" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbPhanKhuc">
+    <Key>
+      <PropertyRef Name="MaPhanKhuc" />
+    </Key>
+    <Property Name="MaPhanKhuc" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenPhanKhuc" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbSanPham">
+    <Key>
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaSP" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenSP" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaLoai" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaHangSX" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaNuocSX" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaPhanKhuc" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaDacTinh" Type="nvarchar" MaxLength="50" />
+    <Property Name="GiaTien" Type="int" />
+    <Property Name="ChiTiet" Type="nvarchar(max)" />
+    <Property Name="Image" Type="nvarchar" MaxLength="50" />
+    <Property Name="DongXe" Type="nvarchar" MaxLength="50" />
+    <Property Name="CD" Type="float" />
+    <Property Name="CR" Type="float" />
+    <Property Name="CC" Type="float" />
+    <Property Name="SoCho" Type="int" />
+    <Property Name="CanNang" Type="float" />
+    <Property Name="MauSac" Type="nvarchar" MaxLength="50" />
+    <Property Name="DungTichXang" Type="int" />
+    <Property Name="LoaiDongCo" Type="nvarchar" MaxLength="50" />
+    <Property Name="CongSuatToiDa" Type="float" />
+    <Property Name="LoaiLop" Type="nvarchar" MaxLength="50" />
+    <Property Name="LoaiKhung" Type="nvarchar" MaxLength="50" />
+    <Property Name="MucTT" Type="varchar" MaxLength="50" />
+    <Property Name="HopSo" Type="varchar" MaxLength="50" />
+    <Property Name="HTKD" Type="varchar" MaxLength="50" />
+    <Property Name="DTXL" Type="varchar" MaxLength="50" />
+    <Property Name="TSNen" Type="varchar" MaxLength="50" />
+    <Property Name="Mota" Type="varchar" MaxLength="300" />
+    <Property Name="TocDoTD" Type="varchar" MaxLength="50" />
+    <Property Name="NamSX" Type="int" />
+    <Property Name="SLBAN" Type="int" />
+  </EntityType>
+  <Association Name="FK_tbAnhSP_tbSanPham1">
+    <End Role="tbSanPham" Type="Self.tbSanPham" Multiplicity="1" />
+    <End Role="tbAnhSP" Type="Self.tbAnhSP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbSanPham">
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="tbAnhSP">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbDacDiem_tbSanPham">
+    <End Role="tbSanPham" Type="Self.tbSanPham" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbDacDiem" Type="Self.tbDacDiem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbSanPham">
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="tbDacDiem">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbHangSX_tbNuocSX">
+    <End Role="tbNuocSX" Type="Self.tbNuocSX" Multiplicity="0..1" />
+    <End Role="tbHangSX" Type="Self.tbHangSX" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbNuocSX">
+        <PropertyRef Name="MaNuocSX" />
+      </Principal>
+      <Dependent Role="tbHangSX">
+        <PropertyRef Name="NuocSX" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbKhachHang_tbSanPham">
+    <End Role="tbSanPham" Type="Self.tbSanPham" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbKhachHang" Type="Self.tbKhachHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbSanPham">
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="tbKhachHang">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbSanPham_tbDacTinh">
+    <End Role="tbDacTinh" Type="Self.tbDacTinh" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbSanPham" Type="Self.tbSanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbDacTinh">
+        <PropertyRef Name="MaDacTinh" />
+      </Principal>
+      <Dependent Role="tbSanPham">
+        <PropertyRef Name="MaDacTinh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbSanPham_tbHangSX">
+    <End Role="tbHangSX" Type="Self.tbHangSX" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbSanPham" Type="Self.tbSanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbHangSX">
+        <PropertyRef Name="MaHangSX" />
+      </Principal>
+      <Dependent Role="tbSanPham">
+        <PropertyRef Name="MaHangSX" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbSanPham_tbLoai">
+    <End Role="tbLoai" Type="Self.tbLoai" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbSanPham" Type="Self.tbSanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbLoai">
+        <PropertyRef Name="MaLoai" />
+      </Principal>
+      <Dependent Role="tbSanPham">
+        <PropertyRef Name="MaLoai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbSanPham_tbNuocSX">
+    <End Role="tbNuocSX" Type="Self.tbNuocSX" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbSanPham" Type="Self.tbSanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbNuocSX">
+        <PropertyRef Name="MaNuocSX" />
+      </Principal>
+      <Dependent Role="tbSanPham">
+        <PropertyRef Name="MaNuocSX" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbSanPham_tbPhanKhuc">
+    <End Role="tbPhanKhuc" Type="Self.tbPhanKhuc" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbSanPham" Type="Self.tbSanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbPhanKhuc">
+        <PropertyRef Name="MaPhanKhuc" />
+      </Principal>
+      <Dependent Role="tbSanPham">
+        <PropertyRef Name="MaPhanKhuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="Account_Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="user" Type="varchar" Mode="In" />
+    <Parameter Name="password" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="QuanLyBanXeModel1StoreContainer">
+    <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbAnhSP" EntityType="Self.tbAnhSP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbDacDiem" EntityType="Self.tbDacDiem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbDacTinh" EntityType="Self.tbDacTinh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbHangSX" EntityType="Self.tbHangSX" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbKhachHang" EntityType="Self.tbKhachHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbLoai" EntityType="Self.tbLoai" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbNuocSX" EntityType="Self.tbNuocSX" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbPhanKhuc" EntityType="Self.tbPhanKhuc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbSanPham" EntityType="Self.tbSanPham" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tbAnhSP_tbSanPham1" Association="Self.FK_tbAnhSP_tbSanPham1">
+      <End Role="tbSanPham" EntitySet="tbSanPham" />
+      <End Role="tbAnhSP" EntitySet="tbAnhSP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbDacDiem_tbSanPham" Association="Self.FK_tbDacDiem_tbSanPham">
+      <End Role="tbSanPham" EntitySet="tbSanPham" />
+      <End Role="tbDacDiem" EntitySet="tbDacDiem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbHangSX_tbNuocSX" Association="Self.FK_tbHangSX_tbNuocSX">
+      <End Role="tbNuocSX" EntitySet="tbNuocSX" />
+      <End Role="tbHangSX" EntitySet="tbHangSX" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbKhachHang_tbSanPham" Association="Self.FK_tbKhachHang_tbSanPham">
+      <End Role="tbSanPham" EntitySet="tbSanPham" />
+      <End Role="tbKhachHang" EntitySet="tbKhachHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbSanPham_tbDacTinh" Association="Self.FK_tbSanPham_tbDacTinh">
+      <End Role="tbDacTinh" EntitySet="tbDacTinh" />
+      <End Role="tbSanPham" EntitySet="tbSanPham" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbSanPham_tbHangSX" Association="Self.FK_tbSanPham_tbHangSX">
+      <End Role="tbHangSX" EntitySet="tbHangSX" />
+      <End Role="tbSanPham" EntitySet="tbSanPham" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbSanPham_tbLoai" Association="Self.FK_tbSanPham_tbLoai">
+      <End Role="tbLoai" EntitySet="tbLoai" />
+      <End Role="tbSanPham" EntitySet="tbSanPham" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbSanPham_tbNuocSX" Association="Self.FK_tbSanPham_tbNuocSX">
+      <End Role="tbNuocSX" EntitySet="tbNuocSX" />
+      <End Role="tbSanPham" EntitySet="tbSanPham" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbSanPham_tbPhanKhuc" Association="Self.FK_tbSanPham_tbPhanKhuc">
+      <End Role="tbPhanKhuc" EntitySet="tbPhanKhuc" />
+      <End Role="tbSanPham" EntitySet="tbSanPham" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

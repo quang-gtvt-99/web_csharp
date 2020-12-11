@@ -1,0 +1,427 @@
+﻿@model BTLBanXe.Models.tbSanPham
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_layout2.cshtml";
+}
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">@Html.ActionLink("Trang chủ", "Index", "Edit")<span> > </span><span>Sản phẩm</span> </li>
+</ol>
+
+<!-- grids -->
+<div class="grids">
+
+
+
+    <div class="agile-calendar-grid">
+        <div class="page">
+
+            <div class="w3l-calendar-left">
+                <div class="calendar-heading">
+                    <!-- 									<p>Noi dung</p>
+                     -->
+                    <div class="agile-tables">
+                        <div class="w3l-table-info">
+                            <h2>Thêm sản phẩm</h2>
+                            <div class="row">
+                               
+                                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                    @using (Html.BeginForm(("Create", "sp", FormMethod.Post)))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <div class="form-horizontal">
+                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                            @Html.HiddenFor(model => model.MaSP)
+                                            <div class="form-group">
+
+                                                @Html.LabelFor(model => model.MaSP, "Mã sản phẩm", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.MaSP, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.MaSP, null, new { @class = "text-danger" })
+
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.TenSP, "Tên sản phẩm", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.TenSP, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.TenSP, null, new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.MaLoai, "Mã Loại", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.MaLoai, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.MaLoai, null, new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.MaHangSX, "Mã hãng sản xuất", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.MaHangSX, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.MaHangSX, null, new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.MaNuocSX, "Mã nước sản xuất", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.MaNuocSX, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.MaNuocSX, null, new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.MaPhanKhuc, "Mã phân khúc", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.MaPhanKhuc, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.MaPhanKhuc, null, new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.MaDacTinh, "Mã đặc tính", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.MaDacTinh, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.MaDacTinh, null, new { @class = "text-danger" })
+                                            </div>
+
+
+
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.GiaTien, "Giá Tiền", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.GiaTien, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.GiaTien, null, new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.ChiTiet, "Chi tiết", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.ChiTiet, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.ChiTiet, null, new { @class = "text-danger" })
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.Image, "Tên File Ảnh", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Image, null, new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.DongXe, "Dòng Xe", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.DongXe, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.DongXe, null, new { @class = "text-danger" })
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.CD, "Chiều dài", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.CD, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.CD, null, new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.CR, "Chiều rộng", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.CR, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.CR, null, new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.CC, "Chiều cao", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.CC, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.CC, null, new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.SoCho, "Số chỗ ngồi", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.SoCho, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.SoCho, null, new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.CanNang, "Cân nặng", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.CanNang, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.CanNang, null, new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.MauSac, "Màu sắc", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.MauSac, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.MauSac, null, new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group">
+
+                                                @Html.LabelFor(model => model.DungTichXang, "Dung tích bình xăng", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.DungTichXang, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.DungTichXang, null, new { @class = "text-danger" })
+
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.LoaiDongCo, "Loại động cơ", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.LoaiDongCo, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.LoaiDongCo, null, new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.CongSuatToiDa, "Công suất tối đa", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.CongSuatToiDa, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.CongSuatToiDa, null, new { @class = "text-danger" })
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.LoaiLop, "Loại lốp", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.LoaiLop, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.LoaiLop, null, new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.LoaiKhung, "Loại khung xe", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.LoaiKhung, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.LoaiKhung, null, new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.MucTT, "Mức tiêu thụ", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.MucTT, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.MucTT, null, new { @class = "text-danger" })
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.HopSo, "Hộp số", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.HopSo, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.HopSo, null, new { @class = "text-danger" })
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.HTKD, "Hệ thống khởi động", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.HTKD, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.HTKD, null, new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.DTXL, "Dung tích xi lanh", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.DTXL, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.DTXL, null, new { @class = "text-danger" })
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.TSNen, "Tỉ số nén", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.TSNen, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.TSNen, null, new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.Mota, "Mô tả sản phẩm", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.Mota, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Mota, null, new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.TocDoTD, "Tốc độ tối đa", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.TocDoTD, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.TocDoTD, null, new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.NamSX, "Năm sản xuất", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.NamSX, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.NamSX, null, new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.SLBAN, "Số lượng bán ra", htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.SLBAN, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.SLBAN, null, new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+
+                                        <button type="submit" class="btn btn-default">Thêm sản phẩm</button>
+                                    }
+
+
+                                </div>
+
+                                <div>
+                                    @Html.Action("danhmucsp", "Edit")
+                                </div>
+
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="myModal" role="dialog">
+                                    <div class="modal-dialog">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Cập nhật thông tin sản phẩm</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>Mời bạn nhập thông tin sản phẩm: </p>
+                                                @using (Html.BeginForm())
+                                                {
+                                                    @Html.AntiForgeryToken()
+                                                    <div class="form-horizontal">
+                                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                                        @Html.HiddenFor(model => model.MaSP)
+                                                        <div class="form-group">
+
+                                                            @Html.LabelFor(model => model.MaSP, "Mã sản phẩm", htmlAttributes: new { @class = "control-label " })
+                                                            @Html.EditorFor(model => model.MaSP, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.MaSP, null, new { @class = "text-danger" })
+
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.TenSP, "Tên sản phẩm", htmlAttributes: new { @class = "control-label " })
+                                                            @Html.EditorFor(model => model.TenSP, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.TenSP, null, new { @class = "text-danger" })
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.GiaTien, "Giá Tiền", htmlAttributes: new { @class = "control-label " })
+                                                            @Html.EditorFor(model => model.GiaTien, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.GiaTien, null, new { @class = "text-danger" })
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.ChiTiet, "Chi tiết", htmlAttributes: new { @class = "control-label " })
+                                                            @Html.EditorFor(model => model.ChiTiet, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.ChiTiet, null, new { @class = "text-danger" })
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.Image, "Tên File Ảnh", htmlAttributes: new { @class = "control-label " })
+                                                            @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.Image, null, new { @class = "text-danger" })
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.DongXe, "Dòng Xe", htmlAttributes: new { @class = "control-label " })
+                                                            @Html.EditorFor(model => model.DongXe, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.DongXe, null, new { @class = "text-danger" })
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.CD, "Chiều dài", htmlAttributes: new { @class = "control-label " })
+                                                            @Html.EditorFor(model => model.CD, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.CD, null, new { @class = "text-danger" })
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.CR, "Chiều rộng", htmlAttributes: new { @class = "control-label " })
+                                                            @Html.EditorFor(model => model.CR, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.CR, null, new { @class = "text-danger" })
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.CC, "Chiều cao", htmlAttributes: new { @class = "control-label " })
+                                                            @Html.EditorFor(model => model.CC, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.CC, null, new { @class = "text-danger" })
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.SoCho, "Số chỗ ngồi", htmlAttributes: new { @class = "control-label " })
+                                                            @Html.EditorFor(model => model.SoCho, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.SoCho, null, new { @class = "text-danger" })
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.CanNang, "Cân nặng", htmlAttributes: new { @class = "control-label " })
+                                                            @Html.EditorFor(model => model.CanNang, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.CanNang, null, new { @class = "text-danger" })
+                                                        </div>
+                                                        <div class="form-group">
+
+                                                            @Html.LabelFor(model => model.DungTichXang, "Dung tích bình xăng", htmlAttributes: new { @class = "control-label " })
+                                                            @Html.EditorFor(model => model.DungTichXang, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.DungTichXang, null, new { @class = "text-danger" })
+
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.LoaiDongCo, "Loại động cơ", htmlAttributes: new { @class = "control-label " })
+                                                            @Html.EditorFor(model => model.LoaiDongCo, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.LoaiDongCo, null, new { @class = "text-danger" })
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.CongSuatToiDa, "Công suất tối đa", htmlAttributes: new { @class = "control-label " })
+                                                            @Html.EditorFor(model => model.CongSuatToiDa, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.CongSuatToiDa, null, new { @class = "text-danger" })
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.LoaiLop, "Loại lốp", htmlAttributes: new { @class = "control-label " })
+                                                            @Html.EditorFor(model => model.LoaiLop, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.LoaiLop, null, new { @class = "text-danger" })
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.LoaiKhung, "Loại khung xe", htmlAttributes: new { @class = "control-label " })
+                                                            @Html.EditorFor(model => model.LoaiKhung, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.LoaiKhung, null, new { @class = "text-danger" })
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.MucTT, "Mức tiêu thụ", htmlAttributes: new { @class = "control-label " })
+                                                            @Html.EditorFor(model => model.MucTT, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.MucTT, null, new { @class = "text-danger" })
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.HopSo, "Hộp số", htmlAttributes: new { @class = "control-label " })
+                                                            @Html.EditorFor(model => model.HopSo, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.HopSo, null, new { @class = "text-danger" })
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.HTKD, "Hệ thống khởi động", htmlAttributes: new { @class = "control-label " })
+                                                            @Html.EditorFor(model => model.HTKD, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.HTKD, null, new { @class = "text-danger" })
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.DTXL, "Dung tích xi lanh", htmlAttributes: new { @class = "control-label " })
+                                                            @Html.EditorFor(model => model.DTXL, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.DTXL, null, new { @class = "text-danger" })
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.TSNen, "Tỉ số nén", htmlAttributes: new { @class = "control-label " })
+                                                            @Html.EditorFor(model => model.TSNen, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.TSNen, null, new { @class = "text-danger" })
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.Mota, "Mô tả sản phẩm", htmlAttributes: new { @class = "control-label " })
+                                                            @Html.EditorFor(model => model.Mota, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.Mota, null, new { @class = "text-danger" })
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.TocDoTD, "Tốc độ tối đa", htmlAttributes: new { @class = "control-label " })
+                                                            @Html.EditorFor(model => model.TocDoTD, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.TocDoTD, null, new { @class = "text-danger" })
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.NamSX, "Năm sản xuất", htmlAttributes: new { @class = "control-label " })
+                                                            @Html.EditorFor(model => model.NamSX, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.NamSX, null, new { @class = "text-danger" })
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.SLBAN, "Số lượng bán ra", htmlAttributes: new { @class = "control-label " })
+                                                            @Html.EditorFor(model => model.SLBAN, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.SLBAN, null, new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+
+
+                                                    <button type="submit" class="btn btn-default">Chỉnh sửa</button>
+                                                }
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- end mymodal -->
+                                <!-- sanpham -->
+                                <!-- Modal -->
+                                <div class="modal fade" id="myModal1" role="dialog">
+                                    <div class="modal-dialog">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Bạn có chắc chắn muốn xóa hay không?</h4>
+                                            </div>
+                                            <div class="modal-body">
+
+                                                <form action="">
+                                                    <button type="submit" class="btn btn-default" style="margin-left: 43%;">
+                                                        Xóa
+                                                    </button>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- end modal sanpham -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+        <!-- //grids -->
+        <!--photoday-section-->
+

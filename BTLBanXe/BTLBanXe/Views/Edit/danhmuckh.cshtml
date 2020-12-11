@@ -1,0 +1,82 @@
+﻿
+@using BTLBanXe.Models
+@model List<tbKhachHang>
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="laptop" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    <!-- Custom CSS -->
+    <link href="~/Content/css/style.css" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="~/Content/css/morris.css" type="text/css" />
+    <!-- Graph CSS -->
+    <link href="~/Content/css/font-awesome.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="~/Content/js/jquery-2.1.4.min.js"></script>
+    <!-- //jQuery -->
+    <!-- <link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'/>
+    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> -->
+    <!-- lined-icons -->
+    <link rel="stylesheet" href="~/Content/css/icon-font.min.css" type='text/css' />
+
+    <!-- tables -->
+    <link rel="stylesheet" type="text/css" href="~/Content/css/table-style.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/basictable.css" />
+    <script type="text/javascript" src="~/Content/js/jquery.basictable.min.js"></script>
+</head>
+<body>
+
+    <table id="table">
+        <thead>
+            <tr>
+                <th>Mã Khách Hàng
+                </th>
+                <th>Mã Sản Phẩm</th>
+                <th>Tên Khách Hàng</th>
+                <th>Ngày Đặt</th>
+                <th>Ngày Hẹn Trước</th>
+                <th>Số Điện Thoại</th>
+                <th style="text-align: center;">Email</th>
+                <th>Nhu Cầu</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var item in Model)
+                {
+                    <tr class="info">
+                        <td>@item.MaKH</td>
+                        <td>@item.MaSP</td>
+                        <td>
+                            @item.TenKH
+                        </td>
+                        <td>@item.NgayMua</td>
+                        <td>@item.NgayHenLay</td>
+                        <td>@item.SDT</td>
+                        <td>@item.Email</td>
+                        <td>@item.NhuCau</td>
+                        <td style="text-align: center;">
+                            <span>
+                                <a class="agile-icon" href="#" data-toggle="modal" data-target="#myModal">EDIT</a>
+                            </span>
+                            <span>
+                                <a href=@Url.Action("xoakh","Edit",new {@MaKH = item.MaKH })>DELETE</a>
+                            </span>
+
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+
+
+</body>
+</html>
