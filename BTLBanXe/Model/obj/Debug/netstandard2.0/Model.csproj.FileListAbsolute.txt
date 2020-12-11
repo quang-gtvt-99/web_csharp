@@ -1,0 +1,6 @@
+F:\Asp_Net\BTLBanXe\Model\bin\Debug\netstandard2.0\Model.deps.json
+F:\Asp_Net\BTLBanXe\Model\bin\Debug\netstandard2.0\Model.dll
+F:\Asp_Net\BTLBanXe\Model\obj\Debug\netstandard2.0\Model.csprojAssemblyReference.cache
+F:\Asp_Net\BTLBanXe\Model\obj\Debug\netstandard2.0\Model.csproj.CoreCompileInputs.cache
+F:\Asp_Net\BTLBanXe\Model\obj\Debug\netstandard2.0\Model.AssemblyInfoInputs.cache
+F:\Asp_Net\BTLBanXe\Model\obj\Debug\netstandard2.0\Model.AssemblyInfo.cs

@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+@using BTLBanXe.Models
+@model List<tbSanPham>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">@Html.ActionLink("Trang chủ", "Index", "Home")</li>
+</ol>
+<div style="padding-left:30px">
+    @Html.Action("Search", "Home")
+</div>
+
+
+<div>
+    @Html.Action("spMoiVePartial", "Home")
+</div>
+
+<div>
+    @Html.Action("spNoiBatPartial", "Home")
+</div>
+<div>
+    @Html.Action("spBanChayPartial", "Home")
+</div>

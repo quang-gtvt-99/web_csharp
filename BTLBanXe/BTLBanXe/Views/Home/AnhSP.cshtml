@@ -1,0 +1,97 @@
+﻿@using BTLBanXe.Models
+@model List<tbAnhSP>
+
+
+
+<div class="homepage-slider" id="home-slider">
+    <div class="flexslider">
+        <ul class="slides">
+            @{
+                foreach (var item in Model)
+                {
+                    <li>
+                        <img style="width:500px;height:350px" src="@Url.Content("~/images/Ford/"+item.TenFileAnh)" alt="anh bia 1" />
+
+                    </li>
+                }
+            }
+
+
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="~/Content/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="~/Content/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="~/Content/themes/css/font-awesome.min.css">
+<!-- <link rel="stylesheet" type="text/css" href="themes/css/font-awesome.min2.css"> -->
+<link rel="stylesheet" type="text/css" href="~/Content/themes/css/font-awesome.min3.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+<link href="~/Content/themes/css/bootstrappage.css" rel="stylesheet" />
+<!-- global styles -->
+<link href="~/Content/themes/css/flexslider.css" rel="stylesheet" />
+<link href="~/Content/themes/css/main.css" rel="stylesheet" />
+
+<!-- scripts -->
+<script src="~/Content/themes/js/jquery-1.7.2.min.js"></script>
+<script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+<script src="~/Content/themes/js/superfish.js"></script>
+<script src="~/Content/themes/js/jquery.scrolltotop.js"></script>
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="js/respond.min.js"></script>
+<![endif]-->
+<script src="~/Content/themes/js/common.js"></script>
+<script src="~/Content/themes/js/jquery.flexslider-min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $(document).ready(function () {
+            $('.flexslider').flexslider({
+                animation: "fade",
+                slideshowSpeed: 4000,
+                animationSpeed: 600,
+                controlNav: false,
+                directionNav: true,
+                controlsContainer: ".flex-container" // the container that holds the flexslider
+            });
+        });
+    });
+</script>
+

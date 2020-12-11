@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Search2";
+    Layout = "~/Views/Shared/_layout1.cshtml";
+}
+
+
+@using (Html.BeginForm("spTimKiem2", "Home", FormMethod.Get))
+
+{
+    <div class="row" style="left:40%;">
+     <div class="col-lg-12">
+         <div class="col-md-offset-0" style="margin:20px;padding-left:40%">
+             <label>Nhập Số điện thoại </label>
+             <input style="width:250px;height:30px" type="text" value="@ViewBag.chuoitimkiemSDT" name="searchStringSDT" />
+
+         </div>
+         <div class="col-md-offset-0" style="margin:20px;padding-left:40%">
+             <label>Nhập tên khách hàng </label>
+
+             <input style="width:250px;height:30px" type="text" value="@ViewBag.chuoitimkiemTKH" name="searchStringTKH" />
+
+         </div>
+         <div style="padding-left:50%">
+             <button style="width:100px;height:40px" type="submit" value="Tìm kiếm" class="btn btn-primary">Tìm Kiếm</button>
+
+         </div>
+         
+     </div>
+    </div>}
+

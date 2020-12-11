@@ -1,0 +1,6 @@
+﻿@using BTLBanXe.Models
+@model List<tbHangSX>
+@foreach (var item in Model)
+{
+    <li><a href="@Url.Action("spTheoHang", "Home", new { @hangsx = item.MaHangSX})">@item.TenHangSX</a></li>
+}

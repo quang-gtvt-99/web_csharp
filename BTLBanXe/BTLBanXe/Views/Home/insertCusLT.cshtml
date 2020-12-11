@@ -1,0 +1,98 @@
+﻿@model BTLBanXe.Models.tbKhachHang
+
+
+@{
+    ViewBag.Title = "insertCus";
+    Layout = "~/Views/Shared/_layout1.cshtml";
+}
+<h2>Đăng kí lái thử</h2>
+<div>
+    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+
+        @using (Html.BeginForm(("Create", "KH", FormMethod.Post)))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>Đăng kí thông tin khách hàng</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.MaKH, new { @class = "form-control", Value = ViewBag.makh, @type = "hidden" })
+                        @Html.ValidationMessageFor(model => model.MaKH, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group " style="margin:10px">
+                    @Html.LabelFor(model => model.TenKH, "Tên Khách Hàng :", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.TenKH, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.TenKH, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group" style="margin:10px">
+                    @Html.LabelFor(model => model.SDT, "Số Điện Thoại :", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.SDT, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.SDT, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin:10px">
+                    @Html.LabelFor(model => model.Email, "Email:", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group" style="margin:10px">
+                    @Html.LabelFor(model => model.NgayHenLay, "Ngày Hẹn Lấy : ", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.NgayHenLay, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.NgayHenLay, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.MaSP, new { @class = "form-control", Value = ViewBag.masp, @type = "hidden" })
+                        @Html.ValidationMessageFor(model => model.MaSP, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.NgayMua, new { @class = "form-control", Value = ViewBag.daynow, @type = "hidden" })
+                        @Html.ValidationMessageFor(model => model.NgayMua, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.NhuCau, new { @class = "form-control", Value = "", @type = "hidden" })
+                        @Html.ValidationMessageFor(model => model.NhuCau, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Đăng Kí" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </div>
+
+    <div style="width:450px;height:145px;position:absolute;left:520px;top:190px">
+        @Html.Action("TTins", "Home")
+    </div>
+</div>

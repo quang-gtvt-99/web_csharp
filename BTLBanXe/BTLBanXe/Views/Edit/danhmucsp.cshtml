@@ -1,0 +1,77 @@
+﻿@using BTLBanXe.Models
+@model List<tbSanPham>
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="laptop" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    <!-- Custom CSS -->
+    <link href="~/Content/css/style.css" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="~/Content/css/morris.css" type="text/css" />
+    <!-- Graph CSS -->
+    <link href="~/Content/css/font-awesome.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="~/Content/js/jquery-2.1.4.min.js"></script>
+    <!-- //jQuery -->
+    <!-- <link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'/>
+    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> -->
+    <!-- lined-icons -->
+    <link rel="stylesheet" href="~/Content/css/icon-font.min.css" type='text/css' />
+
+    <!-- tables -->
+    <link rel="stylesheet" type="text/css" href="~/Content/css/table-style.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/basictable.css" />
+    <script type="text/javascript" src="~/Content/js/jquery.basictable.min.js"></script>
+</head>
+<body>
+
+    <h2 style="width:1000px;">......................................................................................................................................</h2>
+    <table id="table">
+        <thead>
+            <tr>
+                <th>Mã sản phẩm</th>
+                <th>Ảnh sản phẩm</th>
+                <th style="text-align: center;">Tên sản phẩm</th>
+                <th>Hãng sản xuất</th>
+                <th>Nước sản xuất</th>
+                <th>Giá tiền</th>
+                <th style="text-align: center;">Chi tiết</th>
+                <th>Chỉnh sửa</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var item in Model)
+                {
+                    <tr class="info">
+                        <td>@item.MaSP</td>
+                        <td><img width="80" height="60" src="@Url.Content("~/images/Ford/"+item.Image)" /></td>
+                        <td>
+                            @item.TenSP
+                        </td>
+                        <td>@item.MaHangSX</td>
+                        <td>@item.MaNuocSX</td>
+                        <td>@item.GiaTien</td>
+                        <td>@item.ChiTiet</td>
+                        <td style="text-align: center;">
+                            <span>
+                                <a class="agile-icon" href="#" data-toggle="modal" data-target="#myModal">EDIT</a>
+                            </span>
+                            <span>
+                               <a href=@Url.Action("xoa","Edit",new {@MaSP = item.MaSP })>DELETE</a>
+                                </span>
+
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+</body>
+</html>
